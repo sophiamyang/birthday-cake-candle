@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A birthday cake for your webcam: light the candles with a flame on your fingertip, then blow them out. Real-time WebGPU lighting from monocular depth." />
+    <title>Birthday cake</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕯️</text></svg>" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <canvas id="gfx" aria-label="Relit camera view"></canvas>
+    <canvas id="fx" aria-hidden="true"></canvas>
+    <div id="ui">
+      <div id="status" role="status" aria-live="polite">Starting…</div>
+      <div id="overlay" class="panel">
+        <div id="stats"></div>
+        <div class="hint">
+          <b>O</b> overlay · <b>R</b> recording mode · <b>V</b> view · <b>F</b> flame · <b>K</b> cake · <b>G</b> save hand data<br />
+          snap / quick pinch = ignite · fist / shake = put out
+        </div>
+      </div>
+      <div id="cakePanel" class="panel off">
+        <div class="row">
+          🎂 candles
+          <button id="cMinus" title="Fewer candles" aria-label="Fewer candles">−</button>
+          <input id="cRange" type="range" min="1" max="40" step="1" aria-label="Candle count" />
+          <button id="cPlus" title="More candles" aria-label="More candles">+</button>
+          <b id="cCount"></b>
+        </div>
+        <div class="row">
+          <button id="cLight" title="Light every candle (L)">light all</button>
+          <button id="cMic" title="Enable microphone blow detection" aria-label="Enable microphone blow detection">🎤 mic</button>
+          <span id="micMeter" aria-hidden="true"><i></i></span>
+        </div>
+        <div class="hint">ignite your fingertip (snap / quick pinch, or <b>F</b>), then hold the flame on a wick until it catches<br />fist / shake = finger out · blow at the screen, or hold <b>B</b></div>
+      </div>
+      <div id="buttons">
+        <button id="btnCake" title="Birthday cake mode (K)" aria-label="Birthday cake mode">🎂</button>
+        <button id="btnOverlay" title="Toggle overlay (O)" aria-label="Toggle stats overlay">ⓘ</button>
+        <button id="btnRecord" title="Recording mode: hide all UI (R, Esc to exit)">● REC mode</button>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

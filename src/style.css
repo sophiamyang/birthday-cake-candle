@@ -1,0 +1,26 @@
+html, body { margin: 0; height: 100%; background: #000; overflow: hidden; font: 12px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; color: #e8e2d8; }
+#gfx, #fx { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; }
+#fx { pointer-events: none; }
+#ui { position: fixed; inset: 0; pointer-events: none; }
+#ui > * { pointer-events: auto; }
+.panel { position: absolute; top: 12px; left: 12px; background: rgba(10, 8, 6, 0.62); border: 1px solid rgba(255, 190, 120, 0.18); border-radius: 8px; padding: 8px 10px; backdrop-filter: blur(6px); min-width: 170px; }
+#stats { white-space: pre; margin-bottom: 6px; }
+.hint { margin-top: 6px; opacity: 0.7; font-size: 11px; }
+#status { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); background: rgba(10, 8, 6, 0.62); padding: 6px 12px; border-radius: 6px; opacity: 0.9; transition: opacity 0.6s; }
+#status.hidden { opacity: 0; }
+#buttons { position: absolute; top: 12px; right: 12px; display: flex; gap: 6px; }
+#buttons button { font: inherit; color: #f3e6d2; background: rgba(10, 8, 6, 0.62); border: 1px solid rgba(255, 190, 120, 0.25); border-radius: 6px; padding: 4px 9px; cursor: pointer; }
+#buttons button:hover { background: rgba(60, 35, 15, 0.8); }
+#btnRecord { color: #ff8a7a; }
+.off { display: none !important; }
+/* Recording mode: nothing but the rendered canvas. */
+body.recording #ui { display: none; }
+body.recording { cursor: none; }
+#cakePanel { top: auto; bottom: 12px; left: 12px; }
+#cakePanel .row { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
+#cakePanel button { font: inherit; color: #f3e6d2; background: rgba(40, 25, 12, 0.7); border: 1px solid rgba(255, 190, 120, 0.25); border-radius: 5px; padding: 2px 8px; cursor: pointer; }
+#cakePanel input[type=range] { width: 140px; accent-color: #ffb36b; }
+#cCount { min-width: 2ch; text-align: right; }
+#micMeter { display: inline-block; width: 60px; height: 6px; background: rgba(255,255,255,0.12); border-radius: 3px; overflow: hidden; }
+#micMeter i { display: block; height: 100%; width: 0%; background: linear-gradient(90deg, #7bd389, #ffd166, #ff6f91); }
+#cMic.on { border-color: #7bd389; color: #b8f0c0; }

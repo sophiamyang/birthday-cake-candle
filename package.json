@@ -1,0 +1,24 @@
+{
+  "name": "birthday-cake-candle",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "1.1.1",
+    "typegpu": "^0.12.8"
+  },
+  "devDependencies": {
+    "@webgpu/types": "^0.1.74",
+    "typescript": "^7.0.2",
+    "unplugin-typegpu": "^0.12.6",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.5"
+  }
+}
